@@ -10,3 +10,9 @@ npm install
 npm run build-server-dev
 npm run dev
 ```
+
+It runs smoothly with babel-node:
+
+```bash
+npm run babel-node
+```
