@@ -1,31 +1,18 @@
-import cors from "@fastify/cors";
 import fastifyCookie from "@fastify/cookie";
 import fastifySession from "@fastify/session";
 import Fastify from "fastify";
-import fastifyView from "@fastify/view";
-import fastifyStatic from "@fastify/static";
 import fastifySecureSession from "@fastify/secure-session";
+import fs from "fs";
 
 const port = process.env.PORT || 4501;
 const env = process.env.NODE_ENV || "production";
-
-console.log(env);
 
 const fastify = Fastify({
 	logger: false,
 	trustProxy: true,
 	https: {
-		key: fs.readFileSync(process.cwd() + "/localhost-key.pem"),
-		cert: fs.readFileSync(process.cwd() + "/localhost-cert.pem"),
-	},
-});
-
-fastify.register(helmet, { contentSecurityPolicy: false, crossOriginEmbedderPolicy: false });
-
-fastify.register(cors, {
-	origin: (origin, cb) => {
-		cb(null, true);
-		return;
+		key: fs.readFileSync(process.cwd() + "/certs/localhost-key.pem"),
+		cert: fs.readFileSync(process.cwd() + "/certs/localhost-cert.pem"),
 	},
 });
 
