@@ -1,0 +1,29 @@
+{
+	"name": "fastify_secure_session_issue",
+	"version": "1.0.0",
+	"main": "./dist/server.cjs",
+	"description": "fastify_secure_session_issue",
+	"scripts": {
+		"build-server-dev": "NODE_ENV=development webpack --config webpack.dev.server.cjs",
+		"dev": "node dist/server.cjs"
+	},
+	"author": "monteiz",
+	"dependencies": {
+		"@fastify/cookie": "^8.3.0",
+		"@fastify/cors": "^8.2.1",
+		"@fastify/helmet": "^10.1.1",
+		"@fastify/secure-session": "^6.1.0",
+		"@fastify/session": "^10.3.0",
+		"@fastify/static": "^6.10.1",
+		"@fastify/view": "^7.4.1",
+		"fastify": "^4.17.0"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.21.8",
+		"@babel/preset-env": "^7.21.5",
+		"babel-loader": "^9.1.2",
+		"webpack": "^5.82.0",
+		"webpack-cli": "^5.1.1",
+		"webpack-dev-server": "^4.15.0"
+	}
+}

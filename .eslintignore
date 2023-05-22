@@ -1,0 +1,7 @@
+dist
+graphics
+node_modules
+test
+public
+src/components
+src/integration
